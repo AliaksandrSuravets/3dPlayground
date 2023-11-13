@@ -79,7 +79,7 @@ namespace Playground.Audio
 
         private void CreateSoundSource()
         {
-            GameObject go = new("SoundsSource");
+            GameObject go = new ("SoundsSource");
             _soundAudioSource = go.AddComponent<AudioSource>();
             _soundAudioSource.volume = SoundVolume;
             go.transform.SetParent(_serviceRootTransform);
@@ -87,7 +87,6 @@ namespace Playground.Audio
 
         private void LoadConfig()
         {
-            Debug.LogError("LoadConfig");
             _config = Resources.Load<AudioServiceConfig>(ConfigPath);
             Assert.IsNotNull(_config, $"{nameof(AudioService)}: {nameof(AudioServiceConfig)} is null " +
                                       $"on path '{ConfigPath}'");

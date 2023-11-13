@@ -1,6 +1,8 @@
 using System;
 using DG.Tweening;
+using Playground.Audio;
 using UnityEngine;
+using Zenject;
 
 namespace Playground.Game.Level
 {
@@ -16,11 +18,23 @@ namespace Playground.Game.Level
         [SerializeField] private Vector3 _endPosition;
         [SerializeField] private float _animationDuration;
         [SerializeField] private float _unclickDelay;
+
+        private AudioService _audioService;
         private bool _isClicked;
 
         private bool _isInTrigger;
 
         private Tween _tween;
+
+        #endregion
+
+        #region Setup/Teardown
+
+        [Inject]
+        public void Construct(AudioService audioService)
+        {
+            _audioService = audioService;
+        }
 
         #endregion
 
@@ -53,6 +67,7 @@ namespace Playground.Game.Level
                         _isClicked = true;
                         _door.Open();
                         PlayUnclickAnimation();
+                        _audioService.PlaySound(SoundType.DoorButton);
                     }
                 );
         }

@@ -3,7 +3,7 @@ namespace Playground.Audio
     public enum SoundType
     {
         None = 0,
-        Interface = 1,
-        PlayerHit = 2,
+        DoorButton = 1,
+        MovingButton = 2,
     }
 }

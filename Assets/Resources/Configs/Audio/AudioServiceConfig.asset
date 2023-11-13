@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e0a426ff3fb4d13962a2a0a0846ce2e, type: 3}
   m_Name: AudioServiceConfig
   m_EditorClassIdentifier: 
-  _sounds: []
+  _sounds:
+  - Clip: {fileID: 8300000, guid: 2e453f74089f5414bb0e4183bd11fa06, type: 3}
+    Name: DoorButton
+    Type: 1
+  - Clip: {fileID: 8300000, guid: c0add4303ec2e494eb578c0d87461e91, type: 3}
+    Name: MovingButton
+    Type: 2

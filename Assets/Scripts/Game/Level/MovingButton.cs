@@ -1,5 +1,7 @@
 ﻿using DG.Tweening;
+using Playground.Audio;
 using UnityEngine;
+using Zenject;
 
 namespace Playground.Game.Level
 {
@@ -21,6 +23,15 @@ namespace Playground.Game.Level
 
         #region Unity lifecycle
 
+        private AudioService _audioService;
+        
+        [Inject]
+        public void Construct(AudioService audioService)
+        {
+            _audioService = audioService;
+        }
+        
+        
         private void OnTriggerEnter(Collider other)
         {
             PlayClickAnimation();
@@ -41,6 +52,7 @@ namespace Playground.Game.Level
                         foreach (MovingPlatform movingPlatform in _movingPlatforms)
                         {
                             movingPlatform.Move();
+                            _audioService.PlaySound(SoundType.MovingButton);
                         }
                     }
                 );
