@@ -35,7 +35,7 @@ namespace Playground.Game.Level
             _levelManager.AddStar(this);
             _tween = transform.DOLocalRotate(new Vector3(0, 360, 360), _timeDurRotate, RotateMode.FastBeyond360)
                 .SetRelative(true)
-                .SetEase(Ease.Linear).SetLoops(-1);
+                .SetLoops(-1);
         }
 
         private void OnDestroy()
