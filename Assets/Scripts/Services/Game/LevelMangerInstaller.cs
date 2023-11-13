@@ -1,7 +1,6 @@
-﻿using Playground.Services.Game;
-using Zenject;
+﻿using Zenject;
 
-namespace Playground.Infrastructure.Installers
+namespace Playground.Services.Game
 {
     public class LevelMangerInstaller : Installer<LevelMangerInstaller>
     {
