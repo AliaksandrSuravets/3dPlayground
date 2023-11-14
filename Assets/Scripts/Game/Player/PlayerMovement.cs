@@ -82,5 +82,16 @@ namespace Playground.Game.Player
         }
 
         #endregion
+
+        #region Public methods
+
+        public void Teleport(Vector3 newvector)
+        {
+            _characterController.enabled = false;
+            transform.position = newvector;
+            _characterController.enabled = true;
+        }
+
+        #endregion
     }
 }
